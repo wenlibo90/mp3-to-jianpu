@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MP3 转简谱</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>MP3 转简谱</h1>
+    <p class="sub">上传歌曲，实时逐音符转写为简谱，并展示原唱音高与写出音符的对比</p>
+  </header>
+
+  <main class="wrap">
+    <section class="card upload">
+      <div id="drop" class="drop">
+        <input id="file" type="file" accept=".mp3,.wav,.m4a,.flac,.ogg,.aac" hidden />
+        <p class="drop-title">点击或拖拽音频到此处</p>
+        <p class="drop-hint">支持 MP3 / WAV / M4A / FLAC / OGG，最大 30MB</p>
+        <p id="filename" class="filename"></p>
+      </div>
+      <button id="go" class="btn" disabled>开始转换</button>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="result" class="card result hidden">
+      <div id="meta" class="meta"></div>
+      <div class="progress"><div id="bar" class="bar"></div></div>
+
+      <div class="pitch-block">
+        <div class="pitch-head">
+          <span class="pitch-title">人声音高 → 音符</span>
+          <span class="legend"><i class="sw sw-orig"></i>原唱音高 <i class="sw sw-note"></i>写出音符</span>
+        </div>
+        <canvas id="pitch" class="pitch-canvas"></canvas>
+      </div>
+
+      <div id="jianpu" class="jianpu"></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

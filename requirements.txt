@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+python-multipart
+numpy
+soundfile
+librosa
+music21
+basic-pitch
+demucs
